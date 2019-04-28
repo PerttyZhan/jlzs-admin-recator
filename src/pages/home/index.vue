@@ -1,20 +1,29 @@
 <template>
-  <div class="fullPage">
-    首页
+  <div class="full">
+    <el-container>
+      <el-aside width="400px">
+        Aside
+      </el-aside>
+      <el-container>
+        <el-header>
+          Header
+        </el-header>
+        <el-main>
+          Main
+        </el-main>
+      </el-container>
+    </el-container>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'home',
+  name: 'page-admin',
   data () {
     return {}
   }
 }
 </script>
 
-<style lang="less" scoped>
-  .fullPage {
-    height: 2000px;
-  }
+<style lang="less" module>
 </style>

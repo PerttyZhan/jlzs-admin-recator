@@ -38,7 +38,7 @@
 </template>
 <script>
   import { loginApp, fetchCopyRight } from './api'
-
+  import { to } from '@/utils'
   export default {
     name: 'page-login',
     data() {
@@ -69,35 +69,23 @@
       }
     },
     methods: {
-      initCopyRight() {
-        fetchCopyRight({params: {}})
-          .then(res => {
-            this.copyright = res
-          })
+      async initCopyRight() {
+        let [error, data] = await to(fetchCopyRight({params: {}}))
+        this.copyright = data
       },
       fetchLogin () {
         let user = this.user;
-        this.$refs.form(valid => {
+        this.$refs.form(async valid => {
           if (valid) {
+            this.loading = true
+            let [error, data] = to(loginApp({data: user}))
+            this.$router.push('/admin')
           }
         })
-        if (!$v.$invalid) {
-          self.$store
-            .dispatch('login', user)
-            .then(res => {
-              if (!res.data.errcode) {
-                self.$store
-                  .dispatch('updateUserInfo')
-                  .then(res => {
-                    self.$router.push('/admin')
-                  })
-              }
-            })
-        }
       }
     },
     mounted () {
-      this.initCopyRight()
+      // this.initCopyRight()
     },
     destroyed () {
     }
