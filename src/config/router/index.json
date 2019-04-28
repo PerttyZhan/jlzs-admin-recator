@@ -1,0 +1,23 @@
+[
+  {
+    "path": "/",
+     "redirect": "/entry"
+  },
+  {
+    "path": "/home",
+    "name": "home",
+    "menuCode": "home",
+    "component": "home"
+  },
+  {
+    "path": "/entry",
+    "name": "entry",
+    "menuCode": "entry",
+    "component": "entry/login"
+  },
+  {
+    "path": "/error/:type",
+    "name": "error",
+    "component": "errorPage/error"
+  }
+]
