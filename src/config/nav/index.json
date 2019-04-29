@@ -1,2 +1,64 @@
 [
+  {
+    "title": "资讯",
+    "icon": "el-icon-news",
+    "menuCode": "100",
+    "children": [
+      {
+        "title": "文章",
+        "icon": "el-icon-reading",
+        "menuCode": "110",
+        "router": "/information/blog"
+      },
+      {
+        "title": "分类",
+        "icon": "el-icon-news",
+        "menuCode": "120",
+        "router": "/information/catalog"
+      },
+      {
+        "title": "标签",
+        "icon": "el-icon-collection-tag",
+        "menuCode": "130",
+        "router": "/information/tag"
+      }
+    ]
+  },
+  {
+    "title": "报道",
+    "icon": "el-icon-message",
+    "menuCode": "200",
+    "router": "/report"
+  },
+  {
+    "title": "全局设置",
+    "icon": "el-icon-setting",
+    "menuCode": "300",
+    "children": [
+      {
+        "title": "首页轮播",
+        "icon": "el-icon-picture-outline-round",
+        "menuCode": "310",
+        "router": "/settings/home-image-carouse"
+      },
+      {
+        "title": "活动页轮播",
+        "icon": "el-icon-picture-outline-round",
+        "menuCode": "320",
+        "router": "/settings/blog-image-carouse"
+      },
+      {
+        "title": "精彩推荐",
+        "icon": "el-icon-reading",
+        "menuCode": "330",
+        "router": "/settings/fantsic-recommond"
+      },
+      {
+        "title": "网站信息",
+        "icon": "el-icon-paperclip",
+        "menuCode": "340",
+        "router": "/settings/website-info"
+      }
+    ]
+  }
 ]

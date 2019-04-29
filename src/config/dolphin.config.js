@@ -6,7 +6,7 @@
  * @Last Modified time: 2018-04-25 19:05:12
  */
 
-const baseContext = process.env.BaseContext
+const baseContext = 'jlzs'
 
 module.exports = {
   sysName: baseContext,
@@ -15,14 +15,19 @@ module.exports = {
     'languageId': 'zh_CN',
     'skin': 'blue',
     'breadcrumb': {
-      "100": ['资讯'],
-      "200": ['报道']
+      "110": ['资讯', '文章'],
+      "120": ['资讯', '分类'],
+      "130": ['资讯', '标签']
     },
     'code': [
       `${baseContext}_home`,
       `${baseContext}_entry`,
 
       `${baseContext}_100`,
+      `${baseContext}_110`,
+      `${baseContext}_120`,
+      `${baseContext}_130`,
+      
       `${baseContext}_200`
     ]
   }

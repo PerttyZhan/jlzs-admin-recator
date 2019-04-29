@@ -1,0 +1,8 @@
+[
+  {
+    "path": "/information/blog",
+    "name": "information-blog",
+    "menuCode": "110",
+    "component": "information/blog"
+  }
+]

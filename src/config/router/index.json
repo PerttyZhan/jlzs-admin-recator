@@ -4,7 +4,7 @@
      "redirect": "/entry"
   },
   {
-    "path": "/home",
+    "path": "/admin",
     "name": "home",
     "menuCode": "home",
     "component": "home"

@@ -173,6 +173,5 @@ export {
   compareObject,
   renderSkin,
   loadCSS,
-  isTipError,
   createValidate
 }

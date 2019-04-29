@@ -40,7 +40,14 @@ const processRouteObj = ({ menuCode, breadcrumb, children, component, ...args })
 }
 
 const routes = createRoute((r => {
-  return r.keys().reduce((a, b) => a.concat(r(b)), [])
+  return r.keys().reduce((a, b) => {
+    if (b.includes('index.')) {
+      return a.concat(r(b))
+    } else {
+      a[1].children = r(b)
+      return a
+    }
+  }, [])
 })(require.context('../config/router', true, /\.json$/)))
 
 const router = new Router({
