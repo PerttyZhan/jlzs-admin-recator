@@ -27,3 +27,6 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+### table加入拖动https://www.cnblogs.com/jin-zhe/p/10181852.html

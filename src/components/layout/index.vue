@@ -1,5 +1,6 @@
 <template>
   <div class="layout">
+
     <div v-if="breadcrumb && breadcrumb.length" class="layout-header">
       <div class="layout-breadcrumb">
         <el-breadcrumb :separator="separator">
@@ -12,8 +13,13 @@
       </div>
     </div>
 
-    <el-row type="flex" justify="space-between" class="layout-operate">
-      <div>
+    <el-row
+      v-if="$slots.operate"
+      type="flex"
+      justify="space-between"
+      class="layout-operate">
+        <slot name="operate"></slot>
+      <!-- <div>
         <el-button
           type="medium"
           icon="el-icon-plus"
@@ -27,15 +33,17 @@
             删除
         </el-button>
       </div>
-      <!-- <el-button
+      <el-button
         title="收缩过滤"
         type="medium"
         icon="el-icon-setting"
         class="el-button--iconButton">
       </el-button> -->
     </el-row>
+    
 
     <el-form
+      v-if="$slots.filter"
       class="layout-filter">
       <el-row>
         <el-col v-for="n in 3" :key="n" :xs="24" :sm="12" :lg="8" :xl="6">
@@ -49,6 +57,11 @@
         </div>
       </el-row>
     </el-form>
+    
+
+    <div class="layout-main">
+      <slot></slot>
+    </div>
   </div>
 </template>
 
@@ -67,7 +80,7 @@ export default {
     }
   },
   mounted () {
-    console.log(this.breadcrumb)
+    console.log(this.$slots)
   }
 }
 </script>
@@ -115,6 +128,12 @@ export default {
         margin-top: 24px;
         margin-bottom: 16px;
       }
+    }
+
+    .layout-main {
+      flex: 1;
+      width: 100%;
+      padding: 15px;
     }
   }
 </style>
