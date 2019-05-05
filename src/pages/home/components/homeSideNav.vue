@@ -35,7 +35,7 @@
         :class="$style['el-menu-vertical']"
         :default-active="defaultActive"
         mode="vertical"
-        :router="true"
+        @select="selectMenu"
         :unique-opene="true">
           <template
             v-for="n in menu">
@@ -50,7 +50,8 @@
                 <el-menu-item
                   v-for="c in n.children"
                   :key="c.menuCode"
-                  :index="c.router">
+                  :route="c.router"
+                  :index="c.menuCode">
                   <i :class="c.icon"></i>
                   <span slot="title">{{c.title}}</span>
                 </el-menu-item>
@@ -58,7 +59,8 @@
               <el-menu-item
                 v-else
                 :key="n.menuCode"
-                :index="n.router">
+                :route="n.router"
+                :index="n.menuCode">
                   <i :class="n.icon"></i>
                   <span slot="title">{{n.title}}</span>
               </el-menu-item>
@@ -83,7 +85,7 @@ export default {
   data () {
     return {
       menu: [],
-      defaultActive: this.$route.fullPath
+      defaultActive: this.$route.meta.menuCode
     }
   },
   components: {
@@ -94,12 +96,18 @@ export default {
       'userInfo'
     ])
   },
+  methods: {
+    selectMenu (a, b, vNode) {
+      this.$router.push(vNode.route)
+    }
+  },
   created () {
     if (process.env.NODE_ENV !== 'development') {
       this.menu = navList.filter(nav => nav.isApp && this.userInfo.code.includes(nav.menuCode))
     } else {
       this.menu = navList
     }
+    // console.log(this.defaultActive)
   }
 }
 </script>

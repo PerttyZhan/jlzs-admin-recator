@@ -67,7 +67,7 @@
 
 <script>
 export default {
-  name: 'layout',
+  name: 'page-layout',
   props: {
     breadcrumb: {
       type: Array,
@@ -80,7 +80,6 @@ export default {
     }
   },
   mounted () {
-    console.log(this.$slots)
   }
 }
 </script>
@@ -134,6 +133,7 @@ export default {
       flex: 1;
       width: 100%;
       padding: 15px;
+      overflow: hidden;
     }
   }
 </style>

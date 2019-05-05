@@ -4,5 +4,12 @@
     "name": "information-blog",
     "menuCode": "110",
     "component": "information/blog"
+  },
+  {
+    "path": "/information/blog/store",
+    "name": "information-blog-store",
+    "menuCode": "110",
+    "breadcrumb": ["添加"],
+    "component": "information/blog/blogForm"
   }
 ]

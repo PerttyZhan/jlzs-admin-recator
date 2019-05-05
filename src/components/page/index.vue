@@ -1,14 +1,12 @@
 <template>
-  <div :class="$style.wrap">
-    <el-scrollbar>
-      <slot></slot>
-    </el-scrollbar>
-  </div>
+  <el-scrollbar class="page-component">
+    <slot></slot>
+  </el-scrollbar>
 </template>
 
 <script>
 export default {
-  name: 'ElPage',
+  name: 'page-scroll',
   props: {
     width: {
       type: String,
@@ -42,17 +40,14 @@ export default {
 }
 </script>
 
-<style lang="less" module>
-  .wrap {
+<style lang="less">
+  .page-component {
     position: relative;
     width: 100%;
     height: 100%;
-    z-index: 10;
-    overflow: hidden;
-  }
-  .wrap-scrollbar {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+    .el-scrollbar__wrap {
+      height: 100%;
+      overflow-x: auto;
+    }
   }
 </style>

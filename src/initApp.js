@@ -8,6 +8,10 @@ import dolphinConfig from '@/config/dolphin.config'
 // import { fetchUserMenu, fetchUserInfo } from '@/api/common'
 import { renderSkin } from '@/utils'
 
+import pageLayout from '@/components/layout'
+import pageTable from '@/components/pageTable'
+import pageForm from '@/components/pageForm'
+
 // TODO: 下个版本考虑开发环境下也加载上下文，与生产环境保持一致
 // 开发态与生产环境下上下文不一样
 const baseURL = process.env.NODE_ENV === 'production' ? '' : '/'
@@ -54,7 +58,15 @@ async function errorLoadPage (Vue) {
   )
 }
 
+function setGlobalComponent (Vue) {
+  Vue.component(pageLayout.name, pageLayout)
+  Vue.component(pageTable.name, pageTable)
+  Vue.component(pageForm.name, pageForm)
+}
+
 async function initApp (Vue, config) {
+
+  setGlobalComponent(Vue)
   // let {data:menu} = await fetchUserMenu()
   // store.commit('SET_MENU', menu)
 

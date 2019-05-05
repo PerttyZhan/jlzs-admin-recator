@@ -96,7 +96,7 @@ function compareObject (a = {}, b = {}) {
   let keys = aKey.length >= bKey.length ? aKey : bKey
 
   return keys.reduce((result, k) => {
-    if (a[k] !== b[k]) {
+    if (a[k] != b[k]) {
       result.push(k)
     }
     return result

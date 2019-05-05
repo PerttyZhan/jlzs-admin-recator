@@ -6,7 +6,7 @@ import i18n from '@/i18n'
 import { REQUEST_SUCCESS } from '../../constant'
 
 const baseUrl = {
-  mock: 'http://10.40.239.201:8899/mock/5a72c2cd92dd612bd4b84404/template',
+  mock: ' http://10.33.43.178:7300/mock/5cac0ef94f70ef12dcff5be9/example',
   dev: 'http://api.relayzs.com/admin',
   pre: '',
   prod: 'http://api.relayzs.com/admin'
@@ -15,7 +15,8 @@ const baseUrl = {
 const http = axios.create({
   timeout: 20000,
   withCredentials: true,
-  headers: {'X-Requested-With': 'XMLHttpRequest', 'Content-Type': 'application/x-www-form-urlencoded'},
+  // headers: {'X-Requested-With': 'XMLHttpRequest', 'Content-Type': 'application/x-www-form-urlencoded'},
+  headers: {'X-Requested-With': 'XMLHttpRequest', 'Content-Type': 'application/json'},
   baseURL: baseUrl
   // transformRequest: [function (data) {
   //   return qs.stringify(data)
@@ -28,7 +29,6 @@ http.interceptors.response.use(function (response) {
   if (response.config.url.indexOf('json') > -1) {
     return response
   }
-
    // 根据响应数据判断是否登录过期
   if (response.data.errorCode === 'pleaseRefreshByHeader') {
     let refreshUrl = response.headers['refresh-url'].split('?')[0]
@@ -37,7 +37,7 @@ http.interceptors.response.use(function (response) {
   }
 
   // 对错误进行统一处理
-  if (response.data.code !== REQUEST_SUCCESS) {
+  if (response.data.code != REQUEST_SUCCESS) {
     if (!response.config.noMsg && response.data.msg) {
       Message.error(i18n.t(response.data.msg, response.data.data))
     }
