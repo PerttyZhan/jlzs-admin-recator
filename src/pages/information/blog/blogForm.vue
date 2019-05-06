@@ -101,12 +101,12 @@
         <el-form-item
           prop="content"
           label="内容">
-            <!-- <vue-html5-editor
+            <vue-html5-editor
               :content="formData.content"
               :height="500"
               @change="updateData"
               :auto-height="false">
-            </vue-html5-editor> -->
+            </vue-html5-editor>
         </el-form-item>
       </page-form>
   </page-layout>
@@ -135,7 +135,7 @@ export default {
         s_title: '',
         img_src: '',
         secondcatalog: '',
-        content: '',
+        content: 'asdsad',
         tags: [],
         creator: ''
       },

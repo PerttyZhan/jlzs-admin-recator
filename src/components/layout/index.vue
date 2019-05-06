@@ -72,7 +72,9 @@ export default {
   props: {
     breadcrumb: {
       type: Array,
-      default: []
+      default () {
+        return []
+      }
     }
   },
   data () {

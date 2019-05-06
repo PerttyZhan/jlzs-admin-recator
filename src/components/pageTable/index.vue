@@ -54,7 +54,9 @@ export default {
     },
     tableColumn: {
       type: Array,
-      default: []
+      default () {
+        return []
+      }
     },
     fetchData: {
       type: Function,
