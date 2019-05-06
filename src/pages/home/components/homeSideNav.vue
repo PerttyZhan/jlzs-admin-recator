@@ -6,22 +6,22 @@
           <img src="@/assets/logo.png" alt="logo" :class="$style['userinfo-avatar__image']">
         </a>
         <p :class="$style['userinfo-text']">
-          xxx ( <strong>管理员</strong> )
+          xxx
         </p>
       </div>
 
       <el-row :class="$style['article-summary']" type="flex">
         <el-col>
-          <p :class="$style['article-type']">资讯</p>
-          <p :class="$style['article-count']">123</p>
+          <p :class="$style['article-type']">产业</p>
+          <p :class="$style['article-count']">859</p>
         </el-col>
         <el-col>
-          <p :class="$style['article-type']">报道</p>
-          <p :class="$style['article-count']">123</p>
+          <p :class="$style['article-type']">特写</p>
+          <p :class="$style['article-count']">80</p>
         </el-col>
         <el-col>
-          <p :class="$style['article-type']">博客</p>
-          <p :class="$style['article-count']">活动</p>
+          <p :class="$style['article-type']">活动</p>
+          <p :class="$style['article-count']">42</p>
         </el-col>
       </el-row>
 
@@ -87,9 +87,6 @@ export default {
       menu: [],
       defaultActive: this.$route.meta.menuCode
     }
-  },
-  components: {
-    sideMenuItem
   },
   computed: {
     ...mapState([

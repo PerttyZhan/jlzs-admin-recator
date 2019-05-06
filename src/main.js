@@ -6,13 +6,16 @@ import App from './App'
 import router from './router'
 import store from './store'
 
+// import VueQuillEditor from 'vue-quill-editor'
 import Element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import '@/assets/style/index.less'
 // import common from 'dolphin_common'
 import initApp from './initApp'
+import './editor'
 
 Vue.use(Element)
+// Vue.use(VueQuillEditor)
 // Vue.use(common)
 
 // 全局混合，对面包屑的多语言进行处理
