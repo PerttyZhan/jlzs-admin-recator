@@ -15,9 +15,8 @@ module.exports = {
     'languageId': 'zh_CN',
     'skin': 'blue',
     'breadcrumb': {
-      "110": ['资讯', '文章'],
-      "120": ['资讯', '分类'],
-      "130": ['资讯', '标签']
+      "110": ['产业', '文章'],
+      "120": ['产业', '分类']
     },
     'code': [
       `${baseContext}_home`,
@@ -26,7 +25,6 @@ module.exports = {
       `${baseContext}_100`,
       `${baseContext}_110`,
       `${baseContext}_120`,
-      `${baseContext}_130`,
       
       `${baseContext}_200`
     ]

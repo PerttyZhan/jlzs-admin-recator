@@ -1,8 +1,15 @@
-/**
- * 通用请求
- */
+import instance from '@/api/api/instance'
 
-import instance from './api/instance'
+const URLS = {
+  tagList: '/tags'
+}
 
- export {
- }
+export function fetchTag (params) {
+  return instance({
+    method: 'post',
+    url: URLS.tagList,
+    opts: {
+      data: params
+    }
+  })
+}

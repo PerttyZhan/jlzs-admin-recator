@@ -6,7 +6,12 @@
       ref="elTable"
       row-key="id"
       height="100%"
+      @selection-change="selectChange"
       style="width: 100%">
+        <el-table-column
+          type="selection"
+          width="55">
+        </el-table-column>
         <template
           v-for="(col, index) in tableColumn">
             <el-table-column
@@ -59,6 +64,14 @@ export default {
         })
       }
     },
+    ajaxSuccess: {
+      type: Function,
+      default: () => {}
+    },
+    selectChange: {
+      type: Function,
+      default: () => {}
+    },
     rowSort: {
       type: Boolean,
       default: false
@@ -89,14 +102,22 @@ export default {
           this.fetchList()
         }
       }
+    },
+    query: {
+      deep: true,
+      handler (newV) {
+        if (this.pageInfo.pageNo == 1) {
+          this.fetchList()
+        } else {
+          this.pageInfo.pageNo = 1
+        }
+      }
     }
   },
   computed: {
     ajaxParams () {
-      let query = this.query
       let {pageSize, pageNo} = this.pageInfo        
       return {
-        ...query,
         pageSize,
         pageNo
       }
@@ -106,12 +127,13 @@ export default {
     async fetchList () {
       console.log('fetchList')
       this.loading = true
-      let params = this.ajaxParams
+      let params = Object.assign({}, this.query, this.ajaxParams) 
       let fetchDataFn = this.fetchData
       // if (!params.scheme) return
       let [error, data] = await to(fetchDataFn(params))
       if (error) return
       let {pageNo, pageSize, total, list} = data
+      this.ajaxSuccess && this.ajaxSuccess(list)
       this.tableData = list
       // this.pageInfo = {                                      // 注意对象和数组的直接赋值，即使里面的值一样，也会触发上面的watch
       //   pageNo,
@@ -135,6 +157,9 @@ export default {
           this.tableData.splice(newIndex, 0, currRow)
         }
       })
+    },
+    selectionChange () {
+      console.log('aaaa')
     }
   },
   mounted () {
