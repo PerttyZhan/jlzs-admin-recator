@@ -3,24 +3,37 @@ import config from '../config'
 import axios from 'axios'
 import { Message } from 'element-ui'
 import i18n from '@/i18n'
+import Qs from 'qs'
 import { REQUEST_SUCCESS } from '../../constant'
 
 const baseUrl = {
-  mock: ' http://10.33.43.178:7300/mock/5cac0ef94f70ef12dcff5be9/example',
-  dev: 'http://api.relayzs.com/admin',
+  mock: config.mockUrl,
+  dev: config.apiUrl,
   pre: '',
-  prod: 'http://api.relayzs.com/admin'
+  prod: config.apiUrl
 }[config.env || 'mock']
 
 const http = axios.create({
   timeout: 20000,
   withCredentials: true,
-  // headers: {'X-Requested-With': 'XMLHttpRequest', 'Content-Type': 'application/x-www-form-urlencoded'},
-  headers: {'X-Requested-With': 'XMLHttpRequest', 'Content-Type': 'application/json'},
-  baseURL: baseUrl
-  // transformRequest: [function (data) {
-  //   return qs.stringify(data)
-  // }]
+  headers: {'X-Requested-With': 'XMLHttpRequest', 'Accept': 'application/json; */*', 'Content-Type': 'application/x-www-form-urlencoded'},
+  // headers: {'X-Requested-With': 'XMLHttpRequest', 'Content-Type': 'application/json'},
+  baseURL: baseUrl,
+  transformRequest: [function (data) {
+    return Qs.stringify(data)
+  }],
+  validateStatus (status) {
+    if (status === 401) {
+			Message.error('登录状态消失')
+		}
+		if (status === 422) {
+			Message.error('请填写正确信息')
+		}
+		if (status === 500) {
+			Message.error('500 错误')
+		}
+		return status >= 200 && status < 300;
+  }
 })
 
 // 相应拦截器

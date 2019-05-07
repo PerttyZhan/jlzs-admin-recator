@@ -14,6 +14,7 @@ import config from '../config/dolphin.config'
 Vue.use(Router)
 
 const createRoute = (routes) => {
+  console.log(routes)
   return routes.reduce((processedRoutes, currentRoute) => {
     processedRoutes.push(processRouteObj(currentRoute))
     return processedRoutes
@@ -41,13 +42,11 @@ const processRouteObj = ({ menuCode, breadcrumb, children, component, ...args })
 
 const routes = createRoute((r => {
   return r.keys().reduce((a, b) => {
-    if (b.includes('index.')) {
-      return a.concat(r(b))
-    } else {
-      a[1].children = r(b)
-      return a
+    if (!b.includes('index.')) {
+      a[1].children = a[1].children ? a[1].children.concat(r(b)) : r(b)
     }
-  }, [])
+    return a
+  }, r('./index.json'))
 })(require.context('../config/router', true, /\.json$/)))
 
 const router = new Router({

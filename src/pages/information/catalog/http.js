@@ -1,13 +1,13 @@
 import instance from '@/api/api/instance'
 
 const URLS = {
-  tagList: '/tags'
+  catalogList: '/list/blog'
 }
 
-export function fetchTag (params) {
+export function fetchCatalogList (params) {
   return instance({
     method: 'post',
-    url: URLS.tagList,
+    url: URLS.catalogList,
     opts: {
       data: params
     }

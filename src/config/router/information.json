@@ -11,5 +11,18 @@
     "menuCode": "110",
     "breadcrumb": ["添加"],
     "component": "information/blog/blogForm"
+  },
+  {
+    "path": "/information/blog/:id/update",
+    "name": "information-blog-update",
+    "menuCode": "110",
+    "breadcrumb": ["更新"],
+    "component": "information/blog/blogForm"
+  },
+  {
+    "path": "/information/catalog",
+    "name": "information-catalog",
+    "menuCode": "120",
+    "component": "information/catalog/catalogList"
   }
 ]

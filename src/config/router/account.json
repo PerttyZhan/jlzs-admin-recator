@@ -1,0 +1,8 @@
+[
+  {
+    "path": "/account",
+    "name": "information-list",
+    "menuCode": "700",
+    "component": "account/accountList"
+  }
+]

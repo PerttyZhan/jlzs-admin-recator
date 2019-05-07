@@ -52,9 +52,9 @@ export default {
       deep: true,
       immediate: true,
       handler ({pageNo, pageSize, totalCount}) {
-        this.currentPage = pageNo || 1
-        this.pageSize = pageSize || 10
-        this.total = totalCount || 1
+        this.currentPage = parseInt(pageNo) || 1
+        this.pageSize = parseInt(pageSize) || 10
+        this.total = parseInt(totalCount) || 1
       }
     }
   }

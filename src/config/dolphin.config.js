@@ -16,7 +16,9 @@ module.exports = {
     'skin': 'blue',
     'breadcrumb': {
       "110": ['产业', '文章'],
-      "120": ['产业', '分类']
+      "120": ['产业', '分类'],
+
+      "700": ['账号管理', '列表']
     },
     'code': [
       `${baseContext}_home`,
@@ -26,7 +28,9 @@ module.exports = {
       `${baseContext}_110`,
       `${baseContext}_120`,
       
-      `${baseContext}_200`
+      `${baseContext}_200`,
+
+      `${baseContext}_700`
     ]
   }
 }

@@ -159,9 +159,6 @@ export default {
           this.tableData.splice(newIndex, 0, currRow)
         }
       })
-    },
-    selectionChange () {
-      console.log('aaaa')
     }
   },
   mounted () {

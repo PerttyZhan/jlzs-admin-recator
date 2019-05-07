@@ -151,6 +151,6 @@
     "title": "账号管理",
     "icon": "el-icon-setting",
     "menuCode": "700",
-    "router": "/settings/fantsic-recommond"
+    "router": "/account"
   }
 ]

@@ -1,7 +1,7 @@
 
 import Vue from 'vue'
 import editor from 'vue-html5-editor'
-// import config from '../config'
+import config from '@/api/config'
 
 const options = {
     // 全局组件名称，使用new VueHtml5Editor(options)时该选项无效 
@@ -35,7 +35,7 @@ const options = {
         // 上传参数,默认把图片转为base64而不上传
         // upload config,default null and convert image to base64
         upload: {
-            // url: config.api_url + '/edit/upload',
+            url: config.apiUrl + '/edit/upload',
             headers: {},
             params: {},
             fieldName: "image"

@@ -1,7 +1,7 @@
 <template>
   <div class="layout">
 
-    <div v-if="breadcrumb && breadcrumb.length" class="layout-header">
+    <div class="layout-header">
       <div class="layout-breadcrumb">
         <el-breadcrumb :separator="separator">
           <el-breadcrumb-item
