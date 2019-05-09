@@ -20,7 +20,7 @@
   },
   {
     "title": "特写",
-    "icon": "el-icon-message",
+    "icon": "el-icon-news",
     "menuCode": "200",
     "router": "/report",
     "children": [
@@ -28,19 +28,19 @@
         "title": "文章",
         "icon": "el-icon-reading",
         "menuCode": "210",
-        "router": "/information/blog"
+        "router": "/feature/blog"
       },
       {
         "title": "分类",
         "icon": "el-icon-news",
         "menuCode": "220",
-        "router": "/information/catalog"
+        "router": "/feature/catalog"
       }
     ]
   },
   {
     "title": "活动",
-    "icon": "el-icon-message",
+    "icon": "el-icon-film",
     "menuCode": "300",
     "router": "/activity",
     "children": [
@@ -48,19 +48,19 @@
         "title": "文章",
         "icon": "el-icon-reading",
         "menuCode": "310",
-        "router": "/information/blog"
+        "router": "/activity/blog"
       },
       {
         "title": "分类",
         "icon": "el-icon-news",
         "menuCode": "320",
-        "router": "/information/catalog"
+        "router": "/activity/catalog"
       }
     ]
   },
   {
     "title": "视频",
-    "icon": "el-icon-message",
+    "icon": "el-icon-video-camera",
     "menuCode": "400",
     "router": "/video",
     "children": [
@@ -68,39 +68,33 @@
         "title": "文章",
         "icon": "el-icon-reading",
         "menuCode": "410",
-        "router": "/information/blog"
-      },
-      {
-        "title": "材料",
-        "icon": "el-icon-reading",
-        "menuCode": "420",
-        "router": "/information/blog"
+        "router": "/video/blog"
       },
       {
         "title": "分类",
         "icon": "el-icon-news",
-        "menuCode": "430",
-        "router": "/information/catalog"
+        "menuCode": "420",
+        "router": "/video/catalog"
       }
     ]
   },
   {
     "title": "关于我们",
-    "icon": "el-icon-message",
+    "icon": "el-icon-user",
     "menuCode": "500",
-    "router": "/video",
+    "router": "/about",
     "children": [
       {
         "title": "文章",
         "icon": "el-icon-reading",
         "menuCode": "510",
-        "router": "/information/blog"
+        "router": "/about/blog"
       },
       {
         "title": "分类",
         "icon": "el-icon-news",
         "menuCode": "520",
-        "router": "/information/catalog"
+        "router": "/about/catalog"
       }
     ]
   },
@@ -143,6 +137,12 @@
         "title": "标签库",
         "icon": "el-icon-reading",
         "menuCode": "660",
+        "router": "/settings/fantsic-recommond"
+      },
+      {
+        "title": "视频库",
+        "icon": "el-icon-reading",
+        "menuCode": "670",
         "router": "/settings/fantsic-recommond"
       }
     ]

@@ -1,10 +1,4 @@
-/*
- * @Author: xiangxiao3
- * @项目路由
- * @Date: 2017-11-23 16:28:21
- * @Last Modified by: xiangxiao3
- * @Last Modified time: 2018-04-26 10:17:01
- */
+
 import Vue from 'vue'
 import Router from 'vue-router'
 import store from '@/store'
@@ -14,7 +8,7 @@ import config from '../config/dolphin.config'
 Vue.use(Router)
 
 const createRoute = (routes) => {
-  console.log(routes)
+  // console.log(routes)
   return routes.reduce((processedRoutes, currentRoute) => {
     processedRoutes.push(processRouteObj(currentRoute))
     return processedRoutes

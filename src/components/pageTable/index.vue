@@ -17,8 +17,7 @@
             <el-table-column
               v-if="col.custom"
               :key="'col_' + index"
-              :prop="col.prop"
-              :label="col.label">
+              :bind="col">
                 <template slot-scope="scope">
                   <slot :name="col.name" v-bind="scope"></slot>
                 </template>
@@ -100,7 +99,7 @@ export default {
       handler (newV, oldV) {
         let keys = compareObject(newV, oldV)
         if (keys.length && keys.join('') !== 'totalCount') {
-          console.log( keys )
+          // console.log( keys )
           this.fetchList()
         }
       }
@@ -127,7 +126,7 @@ export default {
   },
   methods: {
     async fetchList () {
-      console.log('fetchList')
+      // console.log('fetchList')
       this.loading = true
       let params = Object.assign({}, this.query, this.ajaxParams) 
       let fetchDataFn = this.fetchData

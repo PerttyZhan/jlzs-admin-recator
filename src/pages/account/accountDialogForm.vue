@@ -27,6 +27,7 @@
             <pageScroll class="dialog-tree">
               <el-tree
                 @check="authCheckUpdate"
+                :default-checked-keys="defaultAuths"
                 :data="menus"
                 show-checkbox
                 node-key="menuCode"
@@ -59,8 +60,10 @@ export default {
       dialogVisible: false,
       formData: {
         created_at: '',
-        name: ''
+        name: '',
+        auth: ''
       },
+      defaultAuths: [],
       rules: {
         name: [
           {required: true, message: '请输入名称', trigger: 'blur'}

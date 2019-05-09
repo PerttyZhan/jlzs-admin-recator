@@ -1,0 +1,28 @@
+[
+  {
+    "path": "/feature/blog",
+    "name": "feature-blog",
+    "menuCode": "210",
+    "component": "feature/blog/index.js"
+  },
+  {
+    "path": "/feature/blog/store",
+    "name": "feature-blog-store",
+    "menuCode": "210",
+    "breadcrumb": ["添加"],
+    "component": "feature/blog/blogForm"
+  },
+  {
+    "path": "/feature/blog/:id/update",
+    "name": "feature-blog-update",
+    "menuCode": "210",
+    "breadcrumb": ["更新"],
+    "component": "feature/blog/blogForm"
+  },
+  {
+    "path": "/feature/catalog",
+    "name": "feature-catalog",
+    "menuCode": "220",
+    "component": "feature/catalog/catalogList"
+  }
+]

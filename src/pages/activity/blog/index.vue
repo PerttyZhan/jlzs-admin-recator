@@ -58,13 +58,13 @@ export default {
   data () {
     return {
       tableColumn: [
-        {prop: 'updated_at', label: '时间'},
+        {prop: 'start_at', label: '开始时间'},
+        {prop: 'end_at', label: '结束时间'},
+        {prop: 'title', label: '标题', width: '200px'},
+        {prop: 'address', label: '地址'},
+        {prop: 'weight', label: '权重', width: '80px'},
+        {prop: 'orginor', label: '主办方'},
         {prop: 'type', label: '分类'},
-        {prop: 'tag', label: '标签', width: 120, ellipsis: true},
-        {prop: 'title', label: '标题', width: 200, ellipsis: true},
-        {prop: 'weight', label: '权重'},
-        {prop: 'reads', label: '阅读数'},
-        {prop: 'collections', label: '收藏数'},
         {prop: 'status', label: '状态'},
         {
           custom: true,
@@ -103,13 +103,13 @@ export default {
      * 编辑
      */
     updateOne ({row}) {
-      this.$router.push({name: 'information-blog-update', params: {id: row.id}})
+      this.$router.push({name: 'activity-blog-update', params: {id: row.id}})
     },
     /**
      * 添加
      */
     storeArticle () {
-      this.$router.push({name: 'information-blog-store'})
+      this.$router.push({name: 'activity-blog-store'})
     },
     /**
      * 删除

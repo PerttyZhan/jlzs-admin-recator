@@ -1,0 +1,28 @@
+[
+  {
+    "path": "/video/blog",
+    "name": "video-blog",
+    "menuCode": "410",
+    "component": "video/blog/index.js"
+  },
+  {
+    "path": "/video/blog/store",
+    "name": "video-blog-store",
+    "menuCode": "410",
+    "breadcrumb": ["添加"],
+    "component": "video/blog/blogForm"
+  },
+  {
+    "path": "/video/blog/:id/update",
+    "name": "video-blog-update",
+    "menuCode": "410",
+    "breadcrumb": ["更新"],
+    "component": "video/blog/blogForm"
+  },
+  {
+    "path": "/video/catalog",
+    "name": "video-catalog",
+    "menuCode": "420",
+    "component": "video/catalog/catalogList"
+  }
+]

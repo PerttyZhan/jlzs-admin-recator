@@ -1,0 +1,28 @@
+[
+  {
+    "path": "/activity/blog",
+    "name": "activity-blog",
+    "menuCode": "310",
+    "component": "activity/blog"
+  },
+  {
+    "path": "/activity/blog/store",
+    "name": "activity-blog-store",
+    "menuCode": "310",
+    "breadcrumb": ["添加"],
+    "component": "activity/blog/blogForm"
+  },
+  {
+    "path": "/activity/blog/:id/update",
+    "name": "activity-blog-update",
+    "menuCode": "310",
+    "breadcrumb": ["更新"],
+    "component": "activity/blog/blogForm"
+  },
+  {
+    "path": "/activity/catalog",
+    "name": "activity-catalog",
+    "menuCode": "320",
+    "component": "activity/catalog/catalogList"
+  }
+]
